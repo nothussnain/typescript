@@ -1,4 +1,10 @@
-const students = [
+interface StudentType {
+  name: string;
+  age: number;
+  company: string;
+}
+
+const students: StudentType[] = [
   {
     name: "Haider",
     age: 22,
