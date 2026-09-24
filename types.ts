@@ -68,5 +68,5 @@ class VirtualPoint {
     this.z = z;
   }
 }
-let point = new VirtualPoint(23, 51, 2);
+let point = new VirtualPoint(23, 51, 12);
 console.log(logPoint(point));
