@@ -23,7 +23,7 @@ let Obj = "ali";
 console.log(wrapInArray(Obj));
 function logPoint(p) {
     let val = p.x + p.y + p.z;
-    return val * 2 - 2;
+    return val * 2 - 2 + 3;
 }
 class VirtualPoint {
     x;
