@@ -1,3 +1,4 @@
+export {};
 function sum(num: number[]) {
   let sum = num.reduce((pre: number, next: number) => pre + next);
   return sum;
