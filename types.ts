@@ -55,7 +55,7 @@ interface Point {
   y: number;
   z: number;
 }
-function logPoint(p: Point) {
+function logPoint(p: Point): number {
   let val = p.x + p.y + p.z;
   return val * 2;
 }
