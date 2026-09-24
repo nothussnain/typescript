@@ -56,7 +56,8 @@ interface Point {
   z: number;
 }
 function logPoint(p: Point) {
-  return p.x + p.y + p.z;
+  let val = p.x + p.y + p.z;
+  return val * 2;
 }
 class VirtualPoint {
   x: number;
