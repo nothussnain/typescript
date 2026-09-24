@@ -56,7 +56,7 @@ interface Point {
   z: number;
 }
 function logPoint(p: Point) {
-  return p.x + p.y;
+  return p.x + p.y + p.z;
 }
 class VirtualPoint {
   x: number;

@@ -22,16 +22,18 @@ function wrapInArray(Obj) {
 let Obj = "ali";
 console.log(wrapInArray(Obj));
 function logPoint(p) {
-    return p.x + p.y;
+    return p.x + p.y + p.z;
 }
 class VirtualPoint {
     x;
     y;
-    constructor(x, y) {
+    z;
+    constructor(x, y, z) {
         this.x = x;
         this.y = y;
+        this.z = z;
     }
 }
-let point = new VirtualPoint(23, 51);
+let point = new VirtualPoint(23, 51, 12);
 console.log(logPoint(point));
 export {};
