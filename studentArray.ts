@@ -12,7 +12,7 @@ const students: StudentType[] = [
   },
   {
     name: "Husnanin",
-    age: 21,
+    age: 22,
     company: "codek",
   },
 ];
