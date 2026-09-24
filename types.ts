@@ -53,17 +53,21 @@ console.log(wrapInArray(Obj));
 interface Point {
   x: number;
   y: number;
+  z: number;
 }
-function logPoint(p: Point) {
-  return p.x + p.y;
+function logPoint(p: Point): number {
+  let val = p.x + p.y + p.z;
+  return val * 2 - 2 + 3;
 }
 class VirtualPoint {
   x: number;
   y: number;
-  constructor(x: number, y: number) {
+  z: number;
+  constructor(x: number, y: number, z: number) {
     this.x = x;
     this.y = y;
+    this.z = z;
   }
 }
-let point = new VirtualPoint(23, 51);
+let point = new VirtualPoint(23, 51, 12);
 console.log(logPoint(point));
