@@ -1,4 +1,3 @@
-"use strict";
 const students = [
     {
         name: "Haider",
@@ -15,3 +14,4 @@ function same(students, search) {
     return students.filter((val) => val.name.toLowerCase() === search.toLowerCase());
 }
 console.log(same(students, "Hussnain"));
+export {};
