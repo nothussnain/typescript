@@ -1,12 +1,13 @@
 export {};
 function migratoryBirds(arr: number[]) {
   let unique = [...new Set(arr)];
-  let count = {};
+  let count: { [key: string]: number } = {};
   unique.forEach((element) => {
     let same = arr.filter((val) => val === element);
-    count[element] = same;
+    count[element] = same.length;
   });
-  return count;
+  let large = Object.entries(count).sort(([, a], [, b]) => a - b);
+  return large[0][0];
 }
 let arr: number[] = [2, 2, 1, 1, 3];
 
