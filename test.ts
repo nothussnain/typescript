@@ -1,22 +1,23 @@
-function greet(name: string): string {
-  return `ello ${name}`;
-}
-let student = [1, 2, 3, 4, 5];
-type Values = "dark" | "light" | "system" | "blue";
-const val1: Values = "dark";
-const val2: Values = "light";
-const val3: Values = "system";
-const val4: Values = "blue";
+export {};
+// function greet(name: string): string {
+//   return `ello ${name}`;
+// }
+// let student = [1, 2, 3, 4, 5];
+// type Values = "dark" | "light" | "system" | "blue";
+// const val1: Values = "dark";
+// const val2: Values = "light";
+// const val3: Values = "system";
+// const val4: Values = "blue";
 
-let a = 5;
-let b = 7;
-function printing(): string | boolean {
-  if (a === b) {
-    return "hello";
-  } else {
-    return true;
-  }
-}
+// let a = 5;
+// let b = 7;
+// function printing(): string | boolean {
+//   if (a === b) {
+//     return "hello";
+//   } else {
+//     return true;
+//   }
+// }
 // enums
 // generics
 // function identity<type>(arg:Array<type>):Array<type>{
@@ -87,3 +88,123 @@ function printing(): string | boolean {
 // }
 // create(Loin).keeper.nametag;
 // create(Bee).keeper.hasMask;
+// enum codereview {
+//   name = "hussnain",
+//   rollno = 32,
+// }
+// function checkpayment(status: codereview): string | number {
+//   return status;
+// }
+// console.log(checkpayment(codereview.name));
+// function getValue<T>(val: T): T {
+//   return val;
+// }
+// let fullname = getValue<string>("hussnain");
+// console.log(fullname);
+// function chectvalue<type>(value: type[]): type {
+//   return value[0];
+// }
+// let mynumber = [3, 2, 5];
+// let newnumber = chectvalue<number>(mynumber);
+// console.log(newnumber);
+// interface apiResponse<t> {
+//   success: boolean;
+//   data: t;
+// }
+// const response1: apiResponse<string> = {
+//   success: true,
+//   data: "found",
+// };
+// console.log(response1);
+// const response2: apiResponse<{
+//   name: string;
+//   rollno: number;
+// }> = {
+//   success: true,
+//   data: {
+//     name: "hussnain",
+//     rollno: 32,
+//   },
+// };
+// console.log(response2);
+// interface hasId {
+//   id: number;
+// }
+// function print<t extends hasId>(obj: t) {
+//   return obj.id;
+// }
+
+// console.log(
+//   print({
+//     name: "hussnain",
+//     id: 2,
+//   }),
+// );
+// function printData<t extends { length: number }>(val: t) {
+//   return val.length;
+// }
+// console.log(printData([1, 2, 4, 5]));
+// class Student {
+//   mname: string;
+//   rollno: number;
+// }
+// let student1 = new Student();
+// student1.mname = "husssnain";
+// student1.rollno = 21;
+// function getValue(val: number): number {
+//   return val;
+// }
+// function getVal<t>(val:t):t{
+//   return val
+// }
+// let output=getVal<string>("hussnain");
+// type Length = {
+//   length: number;
+// };
+// function identity<type extends Length>(val: type): number {
+//   console.log(val.length);
+//   return val.length;
+// }
+
+// console.log(identity(val));
+// function identity<type>(val:type):type{
+//   return val;
+// }
+// let user:<type>(val:type)=>type=identity
+// let val :Valuetype = [1, 2, 4, 5,];
+// type Valuetype=Array<number>
+// function loggingIdentity(val: number[]): number[]{
+
+//   console.log(val.length)
+//   return val;
+// }
+// console.log(loggingIdentity([1,2,45]))
+// function loggingIdentity<type>(val:Array<type>):Array<type>{
+//   console.log(val.length);
+//   return val;
+// }
+// interface Identity<input> {
+//   (arg: Array<input>): Array<input>;
+// }
+// function getidentity<type>(arg: Array<type>): Array<type> {
+//   return arg;
+// }
+// let myidentity: Identity<number> = getidentity;
+// let result1 = myidentity([21, 3]);
+// interface Lengthwise{
+//   length:number;
+// }
+// function getDat<type extends Lengthwise>(arg:type):type|number{
+//   return arg.length;
+// }
+// let myDate:<type extends Lengthwise>(arg:type)=>type|number=getDat;
+// let result1=myDate<number[]>([1,2,3])
+class Properties<numtype> {
+  zeroValue: numtype;
+  add: (x: numtype, y: numtype) => numtype;
+}
+let GenerateNumber = new Properties<number>();
+GenerateNumber.zeroValue = 0;
+GenerateNumber.add = function (x, y) {
+  return x + y;
+};
