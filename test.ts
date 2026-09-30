@@ -129,11 +129,11 @@ export {};
 // console.log(response2);
 // interface hasId {
 //   id: number;
+//   name: string;
 // }
-// function print<t extends hasId>(obj: t) {
-//   return obj.id;
+// function print<t extends hasId>(val: t) {
+//   return val.id + val.name;
 // }
-
 // console.log(
 //   print({
 //     name: "hussnain",
@@ -199,12 +199,129 @@ export {};
 // }
 // let myDate:<type extends Lengthwise>(arg:type)=>type|number=getDat;
 // let result1=myDate<number[]>([1,2,3])
-class Properties<numtype> {
-  zeroValue: numtype;
-  add: (x: numtype, y: numtype) => numtype;
+// class Properties<numtype> {
+//   zeroValue: numtype;
+//   add: (x: numtype, y: numtype) => numtype;
+//   constructor(zeroValue: numtype, add: (x: numtype, y: numtype) => numtype) {
+//     this.zeroValue = zeroValue;
+//     this.add = add;
+//   }
+// }
+// let GenerateNumber = new Properties<number>(0, function (x, y) {
+//   return x + y;
+// });
+// console.log(GenerateNumber.add(GenerateNumber.zeroValue, 3));
+// interface Lengthwise {
+//   length: number;
+//   age: number;
+// }
+// function getLength<type extends Lengthwise>(arg: type): type | number {
+//   return arg.age;
+// }
+// let mylength: <input extends Lengthwise>(arg: input) => input | number =
+//   getLength;
+// console.log(mylength({ length: 12, age: 11 }));
+// function logMessage(message: string = "hussnain i hate u"): void {
+//   console.log(message);
+// }
+// logMessage();
+// interface Datatype {
+//   name: string;
+//   rollno: number;
+// }
+// function gatherData<type extends Datatype>(val: type): type | number | string {
+//   return val.name;
+// }
+// let user1 = gatherData({ name: "husnsain", rollno: 21 });
+// function getData<type, key extends keyof type>(obj: type, key: key) {
+//   return obj[key];
+// }
+// let y = { y: 3, j: 1 };
+// console.log(y, "j");
+// function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
+//   return obj[key];
+// }
+
+// let x = { a: 1, b: 2, c: 3, d: 4 };
+
+// console.log(getProperty(x, "a"));
+// function create<type>(arg: { new (): type }): type {
+//   return new arg();
+// }
+// class BeeKeeper {
+//   hasMask: boolean = true;
+// }
+// class ZooKeeper {
+//   nametag: string = "haris rauf criketer";
+// }
+// class Animal {
+//   legs: number = 4;
+// }
+// class Bee extends Animal {
+//   legs = 6;
+//   keeper: BeeKeeper = new BeeKeeper();
+// }
+
+// class loin extends Animal {
+//   legs = 4;
+//   keeper: ZooKeeper = new ZooKeeper();
+// }
+// function create<type extends Animal>(A: new () => type): type {
+//   return new A();
+// }
+// console.log(create(loin).keeper.nametag);
+// class beeKeeper {
+//   hasMask: boolean = true;
+// }
+// class zooKeeper {
+//   nameTag: string = "Babar rizwan";
+// }
+// class Animal {
+//   legs: number = 4;
+// }
+// class Bee extends Animal {
+//   legs = 6;
+//   keeper: beeKeeper = new beeKeeper();
+// }
+// class Lion extends Animal {
+//   legs = 10;
+//   keeper: zooKeeper = new zooKeeper();
+// }
+// function createinstance<type extends Animal>(arg: new () => type): type {
+//   return new arg();
+// }
+// console.log(createinstance(Lion).keeper.nameTag);
+// interface Producer<T>{
+//   make ():T;
+// }
+// interface Producer<T>{
+//   consume:(arg:T)=>void;
+// }
+// interface Animalproducer{
+//   make():Animal;
+// }
+// interface catProduce{
+//   make():Cat;
+// }
+interface Foo<out t>[
+consume:(arg:t)=>void;
+]
+
+interface prouducer<in out t>{
+  make():t;
 }
-let GenerateNumber = new Properties<number>();
-GenerateNumber.zeroValue = 0;
-GenerateNumber.add = function (x, y) {
-  return x + y;
-};
+const p:prouducer<string|number>={
+  make() :number{
+    return 42;
+  }
+}
+interface Consumer<in T>{
+  consume:(arg:T)=>void;
+}
+interface ProducerL<out T>{
+  make():T;
+}
+interface ProducerConsumer<in out T>{
+  consume:(arg:T)=>void;
+  make():T
+}
