@@ -13,11 +13,11 @@ function divisibleSumPair(ar: number[], k: number): number[][] {
 let ar: number[] = [1, 3, 2, 6, 1, 2];
 let k: number = 3;
 console.log(divisibleSumPair(ar, k));
-interface Number {
-  [key: string]: number;
-}
-let user: Number = {
-  name: 2,
-  hussain: 3,
-};
-console.log(user.hussain);
+// interface Number {
+//   [key: string]: number;
+// }
+// let user: Number = {
+//   name: 2,
+//   hussain: 3,
+// };
+// console.log(user.hussain);
