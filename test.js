@@ -10,7 +10,7 @@
 // let a = 5;
 // let b = 7;
 // function printing(): string | boolean {
-//   if (a === b) {
+//   if (a === b) {;
 //     return "hello";
 //   } else {
 //     return true;
@@ -263,25 +263,126 @@
 //   return new A();
 // }
 // console.log(create(loin).keeper.nametag);
-class beeKeeper {
-    hasMask = true;
+// class beeKeeper {
+//   hasMask: boolean = true;
+// }
+// class zooKeeper {
+//   nameTag: string = "Babar rizwan";
+// }
+// class Animal {
+//   legs: number = 4;
+// }
+// class Bee extends Animal {
+//   legs = 6;
+//   keeper: beeKeeper = new beeKeeper();
+// }
+// class Lion extends Animal {
+//   legs = 10;
+//   keeper: zooKeeper = new zooKeeper();
+// }
+// function createinstance<type extends Animal>(arg: new () => type): type {
+//   return new arg();
+// }
+// console.log(createinstance(Lion).keeper.nameTag);
+// interface Producer<T>{
+//   make ():T;
+// }
+// interface Producer<T>{
+//   consume:(arg:T)=>void;
+// }
+// interface Animalproducer{
+//   make():Animal;
+// }
+// interface catProduce{
+//   make():Cat;
+// }
+// interface Foo<out t>[
+// consume:(arg:t)=>void;
+// ]
+// interface prouducer<in out t>{
+//   make():t;
+// }
+// const p:prouducer<string|number>={
+//   make() :number{
+//     return 42;
+//   }
+// }
+// interface Consumer<in T>{
+//   consume:(arg:T)=>void;
+// }
+// interface ProducerL<out T>{
+//   make():T;
+// }
+// interface ProducerConsumer<in out T>{
+//   consume:(arg:T)=>void;
+//   make():T
+// }
+// interface Mypro {
+//   name: string;
+//   rollno: number;
+// }
+// type User={
+//   name:string;
+//   rollno:number;
+// }
+// type data=<type>(a:type,b:type)=>type
+// enum userResponse {
+//   Yes = 1,
+//   No = 0,
+// }
+// function response(user: string, message: userResponse): void {}
+// console.log(response("caroline", userResponse.No));
+// enum fileaccess {
+//   none = 0,
+//   read = 1 << 1,
+//   write = 1 << 2,
+//   readWrite = read | write,
+//   G = "123".length,
+// }
+// enum property {
+//   Circle,
+//   square,
+// }
+// interface Circle {
+//   shape: property.Circle;
+// }
+// interface Square {
+//   shape: property.square;
+// }
+// let c: Square = {
+//   shape: property.square,
+// };
+// enum f {
+//   foo,
+//   joo,
+// }
+// function data(x: f) {
+//   if (x !== f.foo) {
+//   }
+// }
+// enum values {
+//   X,
+//   Y,
+//   Z,
+// }
+// function getvalues(arg: { X: number }): number {
+//   return arg.X;
+// }
+// console.log(getvalues(values));
+var LogLevel;
+(function (LogLevel) {
+    LogLevel[LogLevel["Error"] = 0] = "Error";
+    LogLevel[LogLevel["Warn"] = 1] = "Warn";
+    LogLevel[LogLevel["True"] = 2] = "True";
+    LogLevel[LogLevel["False"] = 3] = "False";
+})(LogLevel || (LogLevel = {}));
+function print(key, message) {
+    const num = LogLevel[key];
+    if (num <= LogLevel.True) {
+        console.log("the key=", key);
+        console.log("the num=", num);
+        console.log("the message=", message);
+    }
 }
-class zooKeeper {
-    nameTag = "Babar rizwan";
-}
-class Animal {
-    legs = 4;
-}
-class Bee extends Animal {
-    legs = 6;
-    keeper = new beeKeeper();
-}
-class Lion extends Animal {
-    legs = 10;
-    keeper = new zooKeeper();
-}
-function createinstance(arg) {
-    return new arg();
-}
-console.log(createinstance(Lion).keeper.nameTag);
+print("Error", "this is the message");
 export {};
