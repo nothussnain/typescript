@@ -12,7 +12,7 @@ export {};
 // let a = 5;
 // let b = 7;
 // function printing(): string | boolean {
-//   if (a === b) {
+//   if (a === b) {;
 //     return "hello";
 //   } else {
 //     return true;
@@ -303,25 +303,101 @@ export {};
 // interface catProduce{
 //   make():Cat;
 // }
-interface Foo<out t>[
-consume:(arg:t)=>void;
-]
+// interface Foo<out t>[
+// consume:(arg:t)=>void;
+// ]
 
-interface prouducer<in out t>{
-  make():t;
-}
-const p:prouducer<string|number>={
-  make() :number{
-    return 42;
-  }
-}
-interface Consumer<in T>{
-  consume:(arg:T)=>void;
-}
-interface ProducerL<out T>{
-  make():T;
-}
-interface ProducerConsumer<in out T>{
-  consume:(arg:T)=>void;
-  make():T
-}
+// interface prouducer<in out t>{
+//   make():t;
+// }
+// const p:prouducer<string|number>={
+//   make() :number{
+//     return 42;
+//   }
+// }
+// interface Consumer<in T>{
+//   consume:(arg:T)=>void;
+// }
+// interface ProducerL<out T>{
+//   make():T;
+// }
+// interface ProducerConsumer<in out T>{
+//   consume:(arg:T)=>void;
+//   make():T
+// }
+// interface Mypro {
+//   name: string;
+//   rollno: number;
+// }
+
+// type User={
+//   name:string;
+//   rollno:number;
+// }
+// type data=<type>(a:type,b:type)=>type
+// enum userResponse {
+//   Yes = 1,
+//   No = 0,
+// }
+// function response(user: string, message: userResponse): void {}
+// console.log(response("caroline", userResponse.No));
+// enum fileaccess {
+//   none = 0,
+//   read = 1 << 1,
+//   write = 1 << 2,
+//   readWrite = read | write,
+//   G = "123".length,
+// }
+// enum property {
+//   Circle,
+//   square,
+// }
+// interface Circle {
+//   shape: property.Circle;
+// }
+// interface Square {
+//   shape: property.square;
+// }
+// let c: Square = {
+//   shape: property.square,
+// };
+// enum f {
+//   foo,
+//   joo,
+// }
+// function data(x: f) {
+//   if (x !== f.foo) {
+//   }
+// }
+// enum values {
+//   X,
+//   Y,
+//   Z,
+// }
+// function getvalues(arg: { X: number }): number {
+//   return arg.X;
+// }
+// console.log(getvalues(values));
+// enum LogLevel {
+//   Error,
+//   Warn,
+//   True,
+//   False,
+// }
+// type LogDetail = keyof typeof LogLevel;
+// function print(key:LogDetail, message: string) {
+//   const num = LogLevel[key];
+//   if (num <= LogLevel.True) {
+//     console.log("the key=", key);
+//     console.log("the num=", num);
+//     console.log("the message=", message);
+//   }
+// }
+// print("Error", "this is the message");
+// enum Reverse {
+//   A,
+//   B,
+//   C,
+// }
+// let a=Reverse.A;
+// let nameofA=Reverse[a]
