@@ -1,3 +1,4 @@
+"use strict";
 // export {};
 // interface Lengthwise {
 //   length: number;
@@ -68,11 +69,12 @@
 //   no = "h",
 // }
 // console.log(User.no);
-// enum response {
-//   yes,
-//   no,
-// }
-// function userdata<T>(arg: T[], msg: response): T[] {
-//   return arg.filter((val) => val === msg);
-// }
-// console.log(userdata([1, 2, 3, 4], response.no));
+var response;
+(function (response) {
+    response[response["yes"] = 0] = "yes";
+    response[response["no"] = 1] = "no";
+})(response || (response = {}));
+function userdata(arg, msg) {
+    return arg.filter((val) => val === msg);
+}
+console.log(userdata([1, 2, 3, 4], response.no));
